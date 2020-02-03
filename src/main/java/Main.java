@@ -20,7 +20,7 @@ public class Main {
         }
 //        try {
 //            copyDirect(input, output);
-//        } catch (IOException e) {
+//        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
 //    }
@@ -31,8 +31,12 @@ public class Main {
 //        Path destDir = Paths.get(String.valueOf(output));
 //
 //        if (listOfFiles != null)
-//            for (File file : listOfFiles)
-//                Files.copy(file.toPath(), destDir.resolve(file.getName()), StandardCopyOption.REPLACE_EXISTING);
+//            if (!Files.exists(destDir)){
+//                throw new IllegalArgumentException("Output directory not found");
+//            }else {
+//                for (File file : listOfFiles)
+//                    Files.copy(file.toPath(), destDir.resolve(file.getName()), StandardCopyOption.REPLACE_EXISTING);
+//            }
 //    }
     }
 }
