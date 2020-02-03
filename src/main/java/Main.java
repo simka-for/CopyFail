@@ -18,9 +18,11 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
 //        try {
 //            copyDirect(input, output);
-//        } catch (Exception e) {
+//        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
 //    }
@@ -30,13 +32,14 @@ public class Main {
 //        File[] listOfFiles = folder.listFiles();
 //        Path destDir = Paths.get(String.valueOf(output));
 //
-//        if (listOfFiles != null)
-//            if (!Files.exists(destDir)){
-//                throw new IllegalArgumentException("Output directory not found");
-//            }else {
-//                for (File file : listOfFiles)
-//                    Files.copy(file.toPath(), destDir.resolve(file.getName()), StandardCopyOption.REPLACE_EXISTING);
+//        if (listOfFiles != null) {
+//            if (!Files.exists(destDir)) {
+//                new File(String.valueOf(output)).mkdir();
 //            }
+//            for (File file : listOfFiles)
+//                Files.copy(file.toPath(), destDir.resolve(file.getName()), StandardCopyOption.REPLACE_EXISTING);
+//        }
 //    }
     }
 }
+
